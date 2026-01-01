@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Friend Quiz</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #ffecd2);
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 {
+            color: #ff6b9d;
+            font-size: 24px;
+        }
+        .note {
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: #ff6b9d;
+        }
+        .question {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .test {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #ff6b9d;
+        }
+        .buttons {
+            display: flex;
+            justify-content: space-around;
+        }
+        button {
+            background: #ff6b9d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #ff4a7a;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Best Friend Quiz 💖</h1>
+        <div class="note">
+            <p>Tum meri best friend ho, Shambhavi, mere dil ke bahut kareeb. 💖 / You are my best friend, Shambhavi, close to my heart. 💖</p>
+        </div>
+        <div id="question1" class="question">
+            <p>Kya tum meri best friend ho? / Are you my best friend?</p>
+            <div class="buttons">
+                <button onclick="answer1('yes')">Yes</button>
+                <button onclick="answer1('no')">No</button>
+            </div>
+        </div>
+        <div id="question2" class="question hidden">
+            <p>Kya tum hamari friendship ko pyar karti ho? / Do you love our friendship?</p>
+            <div class="buttons">
+                <button onclick="answer2('yes')">Yes</button>
+                <button onclick="answer2('no')">No</button>
+            </div>
+        </div>
+        <div id="question3" class="question hidden">
+            <p>Kya tum mera trust hamesha rakhegi? / Will you keep my trust always?</p>
+            <div class="buttons">
+                <button onclick="answer3('yes')">Yes</button>
+                <button onclick="answer3('no')">No</button>
+            </div>
+        </div>
+        <div id="question4" class="question hidden">
+            <p>Kya main tumhara favourite person hoon? / Am I your favourite person?</p>
+            <div class="buttons">
+                <button onclick="answer4('yes')">Yes</button>
+                <button onclick="answer4('no')">No</button>
+            </div>
+        </div>
+        <div id="question5" class="question hidden">
+            <p>Kya tum hamesha mere saath rahogi? / Will you remain forever with me?</p>
+            <div class="buttons">
+                <button onclick="answer5('yes')">Yes</button>
+                <button onclick="answer5('no')">No</button>
+            </div>
+        </div>
+        <div id="test" class="test hidden">
+            <p><strong>Bestfriendship Test by Names: Aarav & Shambhavii</strong></p>
+            <p>Calculating compatibility... ✨</p>
+            <p>Result: 200% Best Friends! Tum dono ek dusre ke liye perfect ho! 💕 / Result: 200% Best Friends! You two are perfect for each other! 💕</p>
+            <button onclick="showEnd()">Continue to Note</button>
+        </div>
+        <div id="end" class="hidden">
+            <p>Shambhavi, tum hamesha mere dil ke kareeb rahogi, special, aur meri forever best friend. 💖 / Shambhavi, you will always be close to my heart, special, and my forever best friend. 💖</p>
+        </div>
+    </div>
+
+    <script>
+        function answer1(answer) {
+            if (answer === 'yes') {
+                document.getElementById('question1').classList.add('hidden');
+                document.getElementById('question2').classList.remove('hidden');
+            } else {
+                alert('Please say yes! 😊 / Kripaya haan kahiye! 😊');
+            }
+        }
+
+        function answer2(answer) {
+            if (answer === 'yes') {
+                document.getElementById('question2').classList.add('hidden');
+                document.getElementById('question3').classList.remove('hidden');
+            } else {
+                alert('Please say yes! Hamari friendship ko pyar karo! 😘 / Please say yes! Love our friendship! 😘');
+            }
+        }
+
+        function answer3(answer) {
+            if (answer === 'yes') {
+                document.getElementById('question3').classList.add('hidden');
+                document.getElementById('question4').classList.remove('hidden');
+            } else {
+                alert('Please say yes! Mera trust rakho! 😊 / Please say yes! Keep my trust! 😊');
+            }
+        }
+
+        function answer4(answer) {
+            if (answer === 'yes') {
+                document.getElementById('question4').classList.add('hidden');
+                document.getElementById('question5').classList.remove('hidden');
+            } else {
+                alert('Please say yes! Main tumhara favourite hoon! 😘 / Please say yes! I am your favourite! 😘');
+            }
+        }
+
+        function answer5(answer) {
+            if (answer === 'yes') {
+                document.getElementById('question5').classList.add('hidden');
+                document.getElementById('test').classList.remove('hidden');
+            } else {
+                alert('Please say yes! Hamesha mere saath raho! 💕 / Please say yes! Remain forever with me! 💕');
+            }
+        }
+
+        function showEnd() {
+            document.getElementById('test').classList.add('hidden');
+            document.getElementById('end').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
